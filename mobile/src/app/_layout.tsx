@@ -12,6 +12,10 @@ import {
 
 import { Loading } from '@/components/loading';
 
+//npm i @gorhom/bottom-sheet
+//npx expo install react-native-reanimated react-native-gesture-handler
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 export default function Layout() {
   const [fontsLoaded] = useFonts({
     Rubik_600SemiBold,
@@ -25,11 +29,13 @@ export default function Layout() {
   }
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-        contentStyle: { backgroundColor: colors.gray[100] },
-      }}
-    />
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: colors.gray[100] },
+        }}
+      />
+    </GestureHandlerRootView>
   );
 }
